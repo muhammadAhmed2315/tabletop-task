@@ -13,13 +13,12 @@
    ```
 2. Install dependencies:
    ```sh
-   npm install
+   npm i
    ```
 
 ## Usage
 Run the application:
 ```sh
-npm i
 npm start
 ```
 
