@@ -24,7 +24,7 @@ npm start
 ```
 
 ## Environment Variables
-Create a `.env` file and add necessary environment variables:
+Create a `.env` file and add the required API_KEY environment variable:
 ```
 API_KEY=<your_dvla_api_key>
 ```
