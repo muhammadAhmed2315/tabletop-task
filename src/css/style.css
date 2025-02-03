@@ -1,0 +1,263 @@
+/*
+--- TYPOGRAPHY SYSTEM
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* *************** GENERAL *************** */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* *************** TITLE BAR *************** */
+.title-bar {
+  color: white;
+  padding: 2rem 5rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* *************** SEARCH BOX *************** */
+.search-input {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: #f4f4f9;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  background: #e8ebf0;
+  box-shadow: 0px 0px 10px #295bac;
+}
+
+.search-button {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+  background: linear-gradient(to right, #3575dd, #05a4bf);
+  box-shadow: 0px 8px 16px rgba(37, 99, 235, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+/* *************** INFO CARDS GRID *************** */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+/* ********** INFO CARDS ********** */
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-top {
+  position: relative;
+}
+
+/* ********** INFO CARDS NUMBER PLATE ********** */
+.card-plate {
+  background: linear-gradient(to bottom, #f8d038 0%, #f5ca2e 100%);
+  padding: 0.25rem 1rem;
+  font-weight: 700;
+  font-size: 1.6rem; /* POTENTIALLY 2.4rem */
+  border-radius: 5px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 1px #ddd;
+  font-family: sans-serif;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+/* ********** INFO CARDS IMAGE ********** */
+.card-img {
+  max-width: 30rem;
+  border-radius: 15px 15px 0 0;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  padding-bottom: 2rem;
+  border-radius: 15px 15px 0 0;
+}
+
+.car-name {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+}
+
+.car-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+/* ********** INFO CARDS SPECS GRID ********** */
+.car-bottom {
+  width: 100%;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.4rem;
+  width: 100%;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  gap: 1rem;
+  background-color: #f9fafb;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.spec-item:hover {
+  transform: translateY(-3px);
+  background: #edeeee;
+}
+
+.spec-label {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.spec-value {
+  width: fit-content;
+  color: #3b82f6;
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.spec-value::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.spec-item:hover .spec-value::after {
+  width: 100%;
+  left: 0;
+}
+
+.spec-value--fuel {
+  text-transform: capitalize;
+}
+
+/* *************** MEDIA QUERIES *************** */
+@media (max-width: 1000px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 52.5%;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .title-bar {
+    font-size: 2.4rem;
+  }
+
+  .search-input,
+  .search-button {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+  }
+
+  .search-input {
+    max-width: 12rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
